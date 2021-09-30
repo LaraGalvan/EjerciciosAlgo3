@@ -1,1 +1,1 @@
-Ejercicios prácticos de Algoritmos y Programación 3 | Curso: Leveroni | 2C 2021
+Ejercicios para entregar | Grupo 19: Diego Ybarra y Lara Galván | Curso: Leveroni | 2C 2021
