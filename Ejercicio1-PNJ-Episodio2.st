@@ -1,3 +1,35 @@
+!classDefinition: #OpinionesDelPuebloRiverwood category: 'Ejercicio1-PNJ-Episodio2'!
+DenotativeObject subclass: #OpinionesDelPuebloRiverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'OpinionesDelPuebloRiverwood class' category: 'Ejercicio1-PNJ-Episodio2'!
+OpinionesDelPuebloRiverwood class
+	instanceVariableNames: 'listaDePrometedores'!
+
+!OpinionesDelPuebloRiverwood class methodsFor: 'as yet unclassified' stamp: 'dd 9/29/2021 18:19:05'!
+calificarComoPrometedorA: PersonajeAIncluir
+	listaDePrometedores add: PersonajeAIncluir! !
+
+!OpinionesDelPuebloRiverwood class methodsFor: 'as yet unclassified' stamp: 'dd 9/29/2021 18:19:05'!
+esPrometedor: unPersonaje
+	^listaDePrometedores includes: unPersonaje! !
+
+!OpinionesDelPuebloRiverwood class methodsFor: 'as yet unclassified' stamp: 'LNG 10/3/2021 22:58:04'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	listaDePrometedores := ((OrderedCollection new) add: #Hamilton; yourself).! !
+
+!OpinionesDelPuebloRiverwood class methodsFor: 'as yet unclassified' stamp: 'dd 9/29/2021 18:19:05'!
+olvidar
+	listaDePrometedores := OrderedCollection new.! !
+
+
 !classDefinition: #PruebasInteracionesConCarolinaLaCurandera category: 'Ejercicio1-PNJ-Episodio2'!
 DenotativeObject subclass: #PruebasInteracionesConCarolinaLaCurandera
 	instanceVariableNames: ''
@@ -97,14 +129,14 @@ test08CuandoLaCuranderaTerminaSuRepertorioDeFrasesConUnPersonajeCambiaLaOpinionD
 	
 	Assert isTrue: (self esVistoPorElPuebloComoPrometedor: self hamilton).! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:00'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'dd 10/2/2021 20:00:15'!
 test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
 	self olvidarInteraccionesYOpiniones.
 	self carolinaLaCurandera interactuarCon: self hamilton.
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 	self carolinaLaCurandera interactuarCon: self hamilton.	
 	
-	Assert that: 'Salud aventurero!!' isEqualTo: (self carolinaLaCurandera interactuarCon: self hamilton)! !
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Salud aventurero!!'! !
 
 !PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:06'!
 test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
@@ -118,44 +150,49 @@ test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReinic
 	Assert that: 'Bienvenido aventurero!!' isEqualTo: (self treborElGuardia interactuarCon: self hamilton)! !
 
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/25/2021 12:41:48'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'dd 9/29/2021 18:17:22'!
 carolinaLaCurandera
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^CarolinaLaCurandera! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:09:00'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'dd 9/29/2021 15:47:59'!
 hamilton
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^ #Hamilton! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:09:16'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'dd 9/29/2021 15:48:04'!
 tirion
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^#Tirion! !
 
 !PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/21/2021 20:52:20'!
 treborElGuardia
 	^ TreborElGuardiaDeSkyrim ! !
 
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:09:33'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 18:15:29'!
 esVistoPorElPuebloComoPrometedor: unPersonaje
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	^self riverwood esPrometedor: unPersonaje.! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 21:01:46'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 18:17:22'!
 hacerQueLaCuranderaOlvideSusInteracciones
-	"Implementar cuando sea necesario"! !
+	CarolinaLaCurandera olvidar.! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 21:02:50'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 15:38:35'!
 hacerQueRiverwoodOlvideTodasSusCalificaciones
-	"Implementar cuando sea necesario"! !
+	self riverwood olvidar.! !
 
-!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:09:48'!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 18:16:07'!
 hacerQueRiverwoodVeaPrometedorAHamilton
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	self riverwood calificarComoPrometedorA: self hamilton! !
 
 !PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/25/2021 12:48:36'!
 olvidarInteraccionesYOpiniones
 	self hacerQueLaCuranderaOlvideSusInteracciones.	
 	self hacerQueRiverwoodOlvideTodasSusCalificaciones.
 ! !
+
+
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'dd 9/29/2021 18:17:01'!
+riverwood
+	^OpinionesDelPuebloRiverwood! !
 
 
 !classDefinition: #PruebasInteracionesConTreborElGuardia category: 'Ejercicio1-PNJ-Episodio2'!
@@ -272,13 +309,17 @@ test09CuandoElGuardiaInteractuaPorSegundaVezConUnPersonajeCalificadoPorElPuebloC
 ! !
 
 
-!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/27/2021 20:52:29'!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'dd 9/29/2021 15:30:48'!
 hamilton
-	^ #Hamilton! !
+	^#Hamilton! !
 
-!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/27/2021 21:08:21'!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'dd 9/29/2021 18:17:01'!
+riverwood
+	^OpinionesDelPuebloRiverwood! !
+
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'dd 9/29/2021 15:30:53'!
 tirion
-	^ #Tirion! !
+	^#Tirion! !
 
 !PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/21/2021 20:42:44'!
 treborElGuardia
@@ -289,13 +330,13 @@ treborElGuardia
 hacerQueElGuardiaOlvideSusInteracciones
 	TreborElGuardiaDeSkyrim olvidar.! !
 
-!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 20:53:36'!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 15:24:13'!
 hacerQueRiverwoodOlvideTodasSusCalificaciones
-	"Implementar cuando sea necesario"! !
+	self riverwood olvidar.! !
 
-!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:06:53'!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'dd 9/29/2021 18:24:54'!
 hacerQueRiverwoodVeaPrometedorAHamilton
-	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+	self riverwood calificarComoPrometedorA: self hamilton! !
 
 !PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/25/2021 12:52:12'!
 olvidarInteraccionesYOpiniones
@@ -315,7 +356,7 @@ DenotativeObject subclass: #TreborElGuardiaDeSkyrim
 
 !classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'Ejercicio1-PNJ-Episodio2'!
 TreborElGuardiaDeSkyrim class
-	instanceVariableNames: 'frases cantidadDeInteraccionesPorPersonaje'!
+	instanceVariableNames: 'cantidadDeInteraccionesPorPersonaje frasesPrometedor frasesDesconocido'!
 
 !TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'LNG 9/28/2021 01:59:15'!
 interactuarCon: unPersonajeJugadorAInteractuar
@@ -328,27 +369,99 @@ interactuarCon: unPersonajeJugadorAInteractuar
 olvidar
 	cantidadDeInteraccionesPorPersonaje := Dictionary new! !
 
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'dd 10/2/2021 19:42:00'!
+reiniciarHiloDeConversacionCon: unPersonaje
+	cantidadDeInteraccionesPorPersonaje at: unPersonaje put: 0. ! !
 
-!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'LNG 9/28/2021 02:04:02'!
+
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 19:39:27'!
+ObtenerFrasePara: unPersonajeJugadorAInteractuar con: cantidadDeInteracciones
+
+	^ (OpinionesDelPuebloRiverwood esPrometedor: unPersonajeJugadorAInteractuar)
+	 	ifTrue: [ frasesPrometedor at: (cantidadDeInteracciones min: frasesPrometedor size)] 
+		ifFalse: [ frasesDesconocido at: (cantidadDeInteracciones min: frasesDesconocido size)]! !
+
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 19:24:05'!
+obtenerCantidadDeInteracciones: unPersonajeJugadorAInteractuar
+
+	^ cantidadDeInteraccionesPorPersonaje at: unPersonajeJugadorAInteractuar ifAbsent: [0]! !
+
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 19:30:43'!
 recordarInteraccionCon: unPersonajeJugadorAInteractuar
 	| cantidadDeInteraccion |
-	cantidadDeInteraccion := cantidadDeInteraccionesPorPersonaje at: unPersonajeJugadorAInteractuar ifAbsent: [0].
+	cantidadDeInteraccion := self obtenerCantidadDeInteracciones: unPersonajeJugadorAInteractuar.
 	cantidadDeInteraccionesPorPersonaje at: unPersonajeJugadorAInteractuar put: cantidadDeInteraccion + 1.
 ! !
 
-!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'LNG 9/28/2021 01:56:46'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 19:38:48'!
 responderSegunCantidadDeInteraccionesCon: unPersonajeJugadorAInteractuar
 	| cantidadDeInteracciones |
-	cantidadDeInteracciones := cantidadDeInteraccionesPorPersonaje at: unPersonajeJugadorAInteractuar.
-	^ frases at: (cantidadDeInteracciones min: frases size)
+	cantidadDeInteracciones := self obtenerCantidadDeInteracciones: unPersonajeJugadorAInteractuar.
+	^ self ObtenerFrasePara: unPersonajeJugadorAInteractuar con: cantidadDeInteracciones
 	! !
 
 
-!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LNG 9/28/2021 21:47:57'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'LNG 10/3/2021 22:58:04'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
-	frases := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
-	cantidadDeInteraccionesPorPersonaje := ((Dictionary new)).! !
+	cantidadDeInteraccionesPorPersonaje := ((Dictionary new) add: (#Hamilton->2); yourself).
+	frasesPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).
+	frasesDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).! !
 
+
+!classDefinition: #CarolinaLaCurandera category: 'Ejercicio1-PNJ-Episodio2'!
+TreborElGuardiaDeSkyrim subclass: #CarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'CarolinaLaCurandera class' category: 'Ejercicio1-PNJ-Episodio2'!
+CarolinaLaCurandera class
+	instanceVariableNames: ''!
+
+!CarolinaLaCurandera class methodsFor: 'interacciones' stamp: 'dd 10/2/2021 19:45:46'!
+interactuarCon: unPersonajeJugadorAInteractuar
+	| frase |
+	self recordarInteraccionCon: unPersonajeJugadorAInteractuar.
+	frase := self responderSegunCantidadDeInteraccionesCon: unPersonajeJugadorAInteractuar.
+	self chequearFinDeConversacion: unPersonajeJugadorAInteractuar.
+	^ frase
+	! !
+
+
+!CarolinaLaCurandera class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 20:28:12'!
+chequearFinDeConversacion: unPersonajeJugadorAInteractuar
+	|cantidadDeInteracciones |
+	cantidadDeInteracciones :=self obtenerCantidadDeInteracciones: unPersonajeJugadorAInteractuar.
+	cantidadDeInteracciones = frasesDesconocido size
+		ifTrue: [self hacerCambiosPorClasificacion: unPersonajeJugadorAInteractuar ]! !
+
+!CarolinaLaCurandera class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 20:28:40'!
+hacerCambiosPorClasificacion: unPersonajeJugadorAInteractuar
+
+	OpinionesDelPuebloRiverwood calificarComoPrometedorA: unPersonajeJugadorAInteractuar. 
+	self reiniciarHilosDeConversacionCon: unPersonajeJugadorAInteractuar! !
+
+!CarolinaLaCurandera class methodsFor: 'interacciones - privado' stamp: 'dd 10/2/2021 20:13:40'!
+reiniciarHilosDeConversacionCon: unPersonajeJugadorAInteractuar
+	cantidadDeInteraccionesPorPersonaje at: unPersonajeJugadorAInteractuar put: 0. 
+	TreborElGuardiaDeSkyrim reiniciarHiloDeConversacionCon: unPersonajeJugadorAInteractuar.
+
+! !
+
+
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'LNG 10/3/2021 22:58:04'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorPersonaje := ((Dictionary new) add: (#Hamilton->0); yourself).
+	frasesPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).
+	frasesDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).! !
+
+OpinionesDelPuebloRiverwood initializeAfterFileIn!
 TreborElGuardiaDeSkyrim initializeAfterFileIn!
+CarolinaLaCurandera initializeAfterFileIn!
