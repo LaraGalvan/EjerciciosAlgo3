@@ -439,10 +439,10 @@ isOne
 	
 	^value = 1! !
 
-!Entero methodsFor: 'testing' stamp: 'dd 10/25/2021 16:30:18'!
+!Entero methodsFor: 'testing' stamp: 'dd 10/25/2021 18:54:15'!
 isPositiveGreaterThanOne
 	
-	^value >= 1! !
+	^value > 1! !
 
 !Entero methodsFor: 'testing' stamp: 'HernanWilkinson 5/7/2016 20:12'!
 isZero
